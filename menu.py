@@ -6,11 +6,11 @@ def main():
 def menu():
     print("\nـــــــــــــ Welcome to SELECT_UNIT  Demo ـــــــــــــــ\n")
 
-    choice = input("""
+    choice = int(input("""
     1: Login
     2: Logout
 
-    Please enter your choice: """)
+    Please enter your choice: """))
 
     if choice == 1:
         login()
@@ -23,11 +23,11 @@ def menu():
         menu()
 
 def login():
-    choice = input("""
+    choice = int(input("""
     1: Student
     2: Receptionist 
     3: EXIT
-    Please enter your choice: """)
+    Please enter your choice: """))
     
     if choice == 1 :
         student()
