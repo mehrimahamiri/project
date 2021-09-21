@@ -1,3 +1,4 @@
+import termcolor
 import platform
 import getpass
 import time
