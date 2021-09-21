@@ -6,14 +6,14 @@ import os
 
 while True :
     user_name = input("plz enter username: ")
-    password = getpass.getpass("plz enter password: ")
-    confirm_password = getpass.getpass("plz enter repat pasword: ")
+    password = getpass.getpass(termcolor.colored("plz enter password: ", "yellow"))
+    confirm_password = getpass.getpass(termcolor.colored("plz enter repat pasword: ", "yellow"))
 
     if password == confirm_password:
-        print(termcolor.colored("Done.", "green"))
+        print(termcolor.colored("\nDone.", "green"))
         break
     else:
-        print(termcolor.colored("Your password doesn't match with your confirm password.", "red"))
+        print(termcolor.colored("\nYour password doesn't match with your confirm password.", "red"))
         print(termcolor.colored("Enter the password and confirm password again.", "red"))
         
         time.sleep(2)
