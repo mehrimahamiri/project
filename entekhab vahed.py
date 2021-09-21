@@ -10,7 +10,7 @@ while True :
     confirm_password = getpass.getpass("plz enter repat pasword: ")
 
     if password == confirm_password:
-        print(termcolor.colored("Done.", "greem"))
+        print(termcolor.colored("Done.", "green"))
         break
     else:
         print(termcolor.colored("Your password doesn't match with your confirm password.", "red"))
