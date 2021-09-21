@@ -1,12 +1,10 @@
 #import csv
-import sys
 
 def main():
     menu()
 
 def menu():
-    print("ـــــــــــــ Welcome to SELECT_UNIT  Demo ـــــــــــــــ")
-    print()
+    print("\nـــــــــــــ Welcome to SELECT_UNIT  Demo ـــــــــــــــ\n")
 
     choice = input("""
     1: Login
@@ -14,13 +12,14 @@ def menu():
 
     Please enter your choice: """)
 
-    if choice == "1" :
+    if choice == 1:
         login()
-    elif choice=="2":
+    elif choice == 2:
         quit()
     else:
         print("You must only select NUMBER")
-        print("Please try again !")
+        print("Please try again!")
+
         menu()
 
 def login():
@@ -30,15 +29,15 @@ def login():
     3: EXIT
     Please enter your choice: """)
     
-    if choice == "1" :
+    if choice == 1 :
         student()
-    elif choice=="2":
+    elif choice == 2:
         Receptionist()
-    elif choice == "3":
+    elif choice == 3:
         quit()
     else:
         print("You must only select NUMBER")
-        print("Please try again !")
+        print("Please try again!")
         login()
 
 def student():
