@@ -3,6 +3,7 @@ import sys
 
 def main():
     menu()
+
 def menu():
     print("ـــــــــــــ Welcome to SELECT_UNIT  Demo ـــــــــــــــ")
     print()
@@ -16,11 +17,12 @@ def menu():
     if choice == "1" :
         login()
     elif choice=="2":
-        sys.exit
+        quit()
     else:
         print("You must only select NUMBER")
         print("Please try again !")
         menu()
+
 def login():
     choice = input("""
     1: Student
@@ -33,14 +35,17 @@ def login():
     elif choice=="2":
         Receptionist()
     elif choice == "3":
-        sys.exit
+        quit()
     else:
         print("You must only select NUMBER")
         print("Please try again !")
         login()
+
 def student():
     pass
+
 def Receptionist():
     pass
+
 #the program is initiated, so to speak, here
 main()
