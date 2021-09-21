@@ -1,5 +1,3 @@
-#import csv
-
 def main():
     menu()
 
@@ -15,6 +13,7 @@ def menu():
     if choice == 1:
         login()
     elif choice == 2:
+        print("Ok, Bye!")
         quit()
     else:
         print("You must only select NUMBER")
@@ -34,6 +33,7 @@ def login():
     elif choice == 2:
         Receptionist()
     elif choice == 3:
+        print("Ok, Bye!")
         quit()
     else:
         print("You must only select NUMBER")
