@@ -1,11 +1,31 @@
-user_name=input("plz enter username :")
-password=input("plz enter password :")
-repeatpass=input("plz enter repat pasword :")
+import termcolor
+import platform
+import getpass
+import time
+import art
+import os
+
+print(termcolor.colored(art.text2art("Welcome!"), "cyan"))
+
 while True :
-    if password==repeatpass :
+    user_name = input(termcolor.colored("plz enter username: ", "blue"))
+    password = getpass.getpass(termcolor.colored("plz enter password: ", "yellow"))
+    confirm_password = getpass.getpass(termcolor.colored("plz enter repat pasword: ", "yellow"))
+
+    if password == confirm_password:
+        print(termcolor.colored("\nDone.", "green"))
         break
-    else :
-        print("your password doesn't match with your repeatpassword, enter the password and repeatpass again")
-        password=input("plz enter password :")
-        repeatpass=input("plz enter repat pasword :")
+    else:
+        print(termcolor.colored("\nYour password doesn't match with your confirm password.", "red"))
+        print(termcolor.colored("Enter the password and confirm password again.", "red"))
         
+        time.sleep(2)
+
+        if platform.system().lower() == "windows":
+            os.system("cls")
+        elif platform.system().lower() == "linux":
+            os.system("clear")
+        else:
+            os.system("clear")
+
+        pass
