@@ -2,7 +2,10 @@ import termcolor
 import platform
 import getpass
 import time
+import art
 import os
+
+print(termcolor.colored(art.text2art("Welcome!"), "cyan"))
 
 while True :
     user_name = input("plz enter username: ")
