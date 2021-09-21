@@ -8,7 +8,7 @@ import os
 print(termcolor.colored(art.text2art("Welcome!"), "cyan"))
 
 while True :
-    user_name = input("plz enter username: ")
+    user_name = input(termcolor.colored("plz enter username: ", "blue"))
     password = getpass.getpass(termcolor.colored("plz enter password: ", "yellow"))
     confirm_password = getpass.getpass(termcolor.colored("plz enter repat pasword: ", "yellow"))
 
