@@ -1,46 +1,86 @@
 #import csv
-import sys
 
-def main():
-    menu()
-def menu():
-    print("ـــــــــــــ Welcome to SELECT_UNIT  Demo ـــــــــــــــ")
-    print()
+from colorama import init
+from colorama import Fore,Style
 
-    choice = input("""
-    1: Login
-    2: Logout
+class Uni :
+    count=1400
+    def __init__(self):
+        Uni.count+=1
+        while True :
+            self.menu()
 
-    Please enter your choice: """)
+    def menu(self):
+        init()
+        print(Fore.BLUE+"ــــــــــــــــــــــــــ Welcome to SELECT_UNIT  Demo ــــــــــــــــــــــــــــ"+Style.RESET_ALL)
+        print()
 
-    if choice == "1" :
-        login()
-    elif choice=="2":
-        sys.exit
-    else:
-        print("You must only select NUMBER")
-        print("Please try again !")
-        menu()
-def login():
-    choice = input("""
-    1: Student
-    2: Receptionist 
-    3: EXIT
-    Please enter your choice: """)
-    
-    if choice == "1" :
-        student()
-    elif choice=="2":
-        Receptionist()
-    elif choice == "3":
-        sys.exit
-    else:
-        print("You must only select NUMBER")
-        print("Please try again !")
-        login()
-def student():
-    pass
-def Receptionist():
-    pass
-#the program is initiated, so to speak, here
-main()
+        choice = input("""
+        1: sign up
+        2: sign in
+        3: Quit
+
+        Please enter your choice: """)
+
+        if choice == "1" :
+            self.sign_up()
+        elif choice == "2" :  
+            self.sign_in()
+        elif choice=="3":
+                exit()
+        else:
+            print()
+            init()
+            print(Fore.RED+"You must only select specified NUMBER" )
+            print(Fore.RED+"Please try again !"+Style.RESET_ALL)
+            
+    def sign_up(self):
+        while True :
+            choice = input("""
+            1: Student
+            2: Receptionist 
+            3: EXIT
+            Please enter your choice: """)
+            
+            if choice == "1" :
+                stats = 'student'
+                self._save_in_csv(stats)
+                break
+            
+            elif choice=="2":
+                stats = 'Receptionist'
+                self._save_in_csv(stats)
+                break
+            
+            elif choice == "3":
+                    exit()
+                    
+            else:
+                print("__________________________________________________________________")
+                init()
+                print(Fore.RED+"                       You must only select specified NUMBER         " )
+                print(Fore.RED+"                            Please try again !            "+Style.RESET_ALL)
+                print("__________________________________________________________________")
+            
+        def _save_in_csv(self , stats):
+            user_name=input("please enter username :")
+            password=input("please enter password :")
+            repeatpass=input("please enter repat pasword :")
+            #save(name , password , stats) #SAVE IN CSV
+            
+            while True :
+                if password==repeatpass :
+                    print("sign up !!")
+                    print(Uni.count)
+                    break
+                else :
+                    print("your password doesn't match with your repeatpassword, enter the password and repeatpass again")
+                    password=input("plz enter password :")
+                    repeatpass=input("plz enter repat pasword :")
+    def Receptionist(self):
+        pass
+    def sign_in(self):
+        pass
+        
+
+uni1=Uni()
