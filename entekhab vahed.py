@@ -3,10 +3,11 @@ import getpass
 import time
 import os
 
-user_name = input("plz enter username: ")
-password = getpass.getpass("plz enter password: ")
-confirm_password = getpass.getpass("plz enter repat pasword: ")
 while True :
+    user_name = input("plz enter username: ")
+    password = getpass.getpass("plz enter password: ")
+    confirm_password = getpass.getpass("plz enter repat pasword: ")
+
     if password == confirm_password:
         print("Done.")
         break
