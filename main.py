@@ -6,7 +6,6 @@ from os import path, system
 from prettytable import PrettyTable
 
 init()
-
 class Uni(object):
 
     login = False #ta zamani ke login nakone false
