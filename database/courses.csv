@@ -1,0 +1,17 @@
+course,capacity,remaining,unit,teacher
+,,,,
+django,10,1,3,amiri
+c++,10,3,4,hosseini
+c#,10,4,4,ahmadi
+SQl,10,5,3,rezayi
+Network,10,8,2,mohamadi
+sport,10,5,1,rasouli
+math,10,9,2,salehi
+Physic,10,0,2,ghaderi
+Php,10,10,3,bagheri
+python,10,2,3,naderi
+Quran,15,0,1,Xakeri
+
+
+grathic,10,5,2,shariati
+sport,10,10,1,10

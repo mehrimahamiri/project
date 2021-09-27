@@ -1,5 +1,6 @@
 #import csv
-
+import hashlib
+import HandleFile
 from colorama import init
 from colorama import Fore,Style
 
@@ -62,21 +63,23 @@ class Uni :
                 print(Fore.RED+"                            Please try again !            "+Style.RESET_ALL)
                 print("__________________________________________________________________")
             
-        def _save_in_csv(self , stats):
-            user_name=input("please enter username :")
-            password=input("please enter password :")
-            repeatpass=input("please enter repat pasword :")
-            #save(name , password , stats) #SAVE IN CSV
-            
-            while True :
-                if password==repeatpass :
-                    print("sign up !!")
-                    print(Uni.count)
-                    break
-                else :
-                    print("your password doesn't match with your repeatpassword, enter the password and repeatpass again")
-                    password=input("plz enter password :")
-                    repeatpass=input("plz enter repat pasword :")
+    def _save_in_csv(self , stats):
+        user_name=input("please enter username :")
+        password=input("please enter password :")
+        repeatpass=input("please enter repat pasword :")
+        while True :
+            if password==repeatpass :
+                pas = hashlib.sha256(password.encode()).hexdigest()
+                file = HandleFile.handleFile('hashing.csv')
+                stdn = {Uni.count , user_name ,stats ,pas }
+                file.append_info_user(stdn)
+                print("sign up !!")
+                print(f"your ID : {Uni.count} stats:{ stats} Uesrname : {user_name} password :{len(password)*'*'}")
+                break
+            else :
+                print("your password doesn't match with your repeatpassword, enter the password and repeatpass again")
+                password=input("plz enter password :")
+                repeatpass=input("plz enter repat pasword :")
     def Receptionist(self):
         pass
     def sign_in(self):
